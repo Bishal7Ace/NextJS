@@ -1,30 +1,39 @@
-import { NAV_LINKS } from "@/constants"
-import Image from "next/image"
-import Link from "next/link"
-import Button from "./Button"
+import Link from 'next/link';
+import Image from 'next/image';
+import Button from './Button';  // Assuming you have a Button component
+import { NAV_LINKS } from '../constants';  // Assuming your nav links are stored here
 
 const Navbar = () => {
   return (
-    <nav className="flexBetween max-container padding-container shadow-md shadow-black/5  dark:shadow-black/10 relative z-30 py-5 ">
-      <Link href="/">
-        <Image src="/hilink-logo.svg" alt="logo" width={74} height={29} />
+    <nav className="w-full  flex items-center justify-between shadow-lg px-6 py-4">
+      {/* Logo */}
+      <Link href="/" className="flex items-center">
+        <Image src="/hilink-logo.svg" alt="Hilink Logo" width={74} height={29} />
       </Link>
 
-      <ul className="hidden h-full gap-12 lg:flex">
+      {/* Navigation Links */}
+      <ul className="hidden lg:flex items-center gap-10">
         {NAV_LINKS.map((link) => (
-          <Link href={link.href} key={link.key} className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
-            {link.label}
-          </Link>
+          <li key={link.key} className="group">
+            <Link href={link.href} className="text-black-700 transition-colors duration-300 hover:text-green-500">
+              {link.label}
+            </Link>
+            <div className="h-0.5 bg-transparent group-hover:bg-green-500 transition-all duration-300"></div>
+          </li>
         ))}
       </ul>
 
-      <div className="lg:flexCenter hidden">
-        <Button type="button" title="Login" icon="/user.svg" variant="btn_dark_green"/>
+      {/* Login Button */}
+      <div className="hidden lg:flex items-center">
+        <Button type="button" title="Login" icon="/user.svg" variant="btn_dark_green" />
       </div>
 
-      <Image src="menu.svg" alt="menu" width={32} height={32} className="inline-block cursor-pointer lg:hidden"/>
+      {/* Mobile Menu Icon */}
+      <div className="lg:hidden flex items-center">
+        <Image src="/menu.svg" alt="Menu" width={32} height={32} className="cursor-pointer"/>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
