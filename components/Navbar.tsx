@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import Button from './Button';  // Assuming you have a Button component
 import { NAV_LINKS } from '../constants';  // Assuming your nav links are stored here
 
 const Navbar = () => {
@@ -14,8 +13,8 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Close mobile menu after clicking an option
-  const handleMenuItemClick = () => {
+  // Function to close mobile menu when a link is clicked
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -36,7 +35,7 @@ const Navbar = () => {
           <ul className="flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <li key={link.key} className="group">
-                <Link href={link.href} className="text-gray-700 font-semibold text-lg transition-colors duration-300 hover:text-green-600 hover:bg-green-100 py-2 px-4 rounded-lg">
+                <Link href={link.href} className="text-gray-700 font-semibold text-lg transition-colors duration-300 hover:text-green-600">
                   {link.label}
                 </Link>
                 <div className="h-0.5 bg-transparent group-hover:bg-green-600 transition-all duration-300"></div>
@@ -62,9 +61,10 @@ const Navbar = () => {
         <ul className="flex flex-col items-center gap-4 py-4 bg-white shadow-lg">
           {NAV_LINKS.map((link) => (
             <li key={link.key} className="w-full text-center">
-              <Link href={link.href} 
-                className="text-gray-700 block w-full py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-green-600 hover:text-white" 
-                onClick={handleMenuItemClick}
+              <Link 
+                href={link.href} 
+                className="text-gray-700 block w-full py-2 transition-colors duration-300 hover:bg-green-600 hover:text-white focus:bg-green-600 focus:text-white"
+                onClick={closeMobileMenu} // Close menu after click
               >
                 {link.label}
               </Link>
