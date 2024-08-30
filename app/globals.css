@@ -9,7 +9,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Inter;
 }
@@ -130,7 +132,7 @@ body {
   }
 
   /* Camp */
-  .camp-quote {
+  .ourmission-quote {
     @apply absolute -right-6 bottom-4 w-[140px] lg:bottom-10 xl:-right-8 xl:w-[186px] 3xl:right-0;
   }
 
@@ -154,4 +156,10 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.our-mission-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }

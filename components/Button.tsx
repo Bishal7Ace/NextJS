@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import clsx from "clsx";
+import Link from "next/link"; // Import Link for navigation
 
 type ButtonProps = {
   type: 'button' | 'submit';
@@ -6,18 +10,38 @@ type ButtonProps = {
   icon?: string;
   variant: string;
   full?: boolean;
-}
+  href?: string; // Optional href prop for navigation
+};
 
-const Button = ({ type, title, icon, variant, full }: ButtonProps) => {
+const Button = ({ type, title, icon, variant, full = false, href }: ButtonProps) => {
+  const buttonContent = (
+    <>
+      {icon && <Image src={icon} alt={title} width={24} height={24} />}
+      <span className="bold-16 whitespace-nowrap text-ellipsis overflow-hidden cursor-pointer">
+        {title}
+      </span>
+    </>
+  );
+
+  if (href) {
+    // If href is provided, render as a Link component
+    return (
+      <Link href={href} className={clsx("flexCenter gap-3 rounded-full border", variant, full && "w-full")}>
+        {buttonContent}
+      </Link>
+    );
+  }
+
+  // If no href, render as a button
   return (
     <button
-    className={`flexCenter gap-3 rounded-full border ${variant} ${full && 'w-full'}`}
+      className={clsx("flexCenter gap-3 rounded-full border", variant, full && "w-full")}
       type={type}
+      aria-label={icon && !title ? title : undefined}
     >
-      {icon && <Image src={icon} alt={title} width={24} height={24} />}
-      <label className="bold-16 whitespace-nowrap cursor-pointer">{title}</label>
+      {buttonContent}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

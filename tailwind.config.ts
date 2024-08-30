@@ -31,8 +31,8 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
+        'bg-rock-research-1': "url('/rock-research-1.png')",
+        'bg-soil-research-2': "url('/soil-research-2.jpg')",
         'feature-bg': "url('/feature-bg.png')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",

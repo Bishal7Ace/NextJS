@@ -1,10 +1,10 @@
 // NAVIGATION
 export const NAV_LINKS = [
-  { href: '/', key: 'home', label: 'Home' },
-  { href: '/', key: 'how_hilink_work', label: 'How Hilink Work?' },
-  { href: '/', key: 'services', label: 'Services' },
-  { href: '/', key: 'pricing ', label: 'Pricing ' },
-  { href: '/', key: 'contact_us', label: 'Contact Us' },
+  { href: '#about-us', key: 'About Us', label: 'About Us' },
+  { href: '#our-mission', key: 'Our Mission', label: 'Our Mission' },
+  { href: '#our-resources', key: 'Our Resources', label: 'Our Resources' },
+  { href: '#past-work', key: 'Past Work', label: 'Past Work' },
+  { href: '#contact-us', key: 'Contact Us', label: 'Contact Us' },
 ];
 
 // CAMP SECTION
@@ -15,71 +15,59 @@ export const PEOPLE_URL = [
   '/person-4.png',
 ];
 
-// FEATURES SECTION
-export const FEATURES = [
+export const PAST_WORK = [
   {
-    title: 'Real maps can be offline',
-    icon: '/map.svg',
-    variant: 'green',
-    description:
-      'We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location',
+    title: "Soil Analysis Study",
+    icon: "/soil.png",
+    description: "An in-depth analysis of soil health and nutrient mapping.",
+    link: "/research/soil-analysis-study" // URL to navigate to
   },
   {
-    title: 'Set an adventure schedule',
-    icon: '/calendar.svg',
-    variant: 'green',
-    description:
-      "Schedule an adventure with friends. On holidays, there are many interesting offers from Hilink. That way, there's no more discussion",
+    title: "Rock Formation Research",
+    icon: "/rock.png",
+    description: "Research on various rock formations and their properties.",
+    link: "/research/rock-formation-research" // URL to navigate to
   },
-  {
-    title: 'Technology using augment reality',
-    icon: '/tech.svg',
-    variant: 'green',
-    description:
-      'Technology uses augmented reality as a guide to your hiking trail in the forest to the top of the mountain. Already supported by the latest technology without an internet connection',
-  },
-  {
-    title: 'Many new locations every month',
-    icon: '/location.svg',
-    variant: 'orange',
-    description:
-      'Lots of new locations every month, because we have a worldwide community of climbers who share their best experiences with climbing',
-  },
-];
+  // Add more items as needed
+]
 
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
     title: 'Learn More',
     links: [
-      'About Hilink',
-      'Press Releases',
-      'Environment',
-      'Jobs',
-      'Privacy Policy',
-      'Contact Us',
+      { label: 'About Us', href: '#' }, 
+      { label: 'Our Missions', href: '#' }, 
+      { label: 'Our Research', href: '#' }, 
+      { label: 'Past Works', href: '#' }, 
+      { label: 'Privacy Policy', href: '#' }, 
+      { label: 'Contact Us', href: '#' }, 
     ],
   },
   {
     title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+    links: [
+      { label: 'Rock ', href: '#' }, 
+      { label: 'Soil ', href: '#' }, 
+      { label: 'Snad ', href: '#' }, 
+    ],
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'hilink@akinthil.com' },
+    { label: 'Research Coordinator', value: '+977-9843540067' },
+    { label: 'Email Officer', value: 'research@soilrock.org' },
   ],
 };
 
 export const SOCIALS = {
-  title: 'Social',
+  title: 'Follow Us',
   links: [
-    '/facebook.svg',
-    '/instagram.svg',
-    '/twitter.svg',
-    '/youtube.svg',
+    { icon: '/facebook.svg', href: '#' }, 
+    { icon: '/instagram.svg', href: '#' }, 
+    { icon: '/twitter.svg', href: '#' }, 
+    { icon: '/youtube.svg', href: '#' }, 
   ],
 };
